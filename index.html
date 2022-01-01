@@ -315,12 +315,12 @@
 				let speedFactor = 0.01;
 				let compensatedVector = ball.userData.velocity.clone().multiplyScalar(speedFactor);
 				ball.position.add(compensatedVector);
-				if(ball.position.x <=-5) {ball.position.x = -5; ball.userData.velocity.x = Math.abs(ball.userData.velocity.x);}
-				if(ball.position.x > 5) {ball.position.x = 5; ball.userData.velocity.x = -Math.abs(ball.userData.velocity.x);}
-				if(ball.position.y <=-5) {ball.position.y = -5; ball.userData.velocity.y = Math.abs(ball.userData.velocity.y);}
-				if(ball.position.y > 5) {ball.position.y = 5; ball.userData.velocity.y = -Math.abs(ball.userData.velocity.y);}
-				if(ball.position.z <=-5) {ball.position.z = -5; ball.userData.velocity.z = Math.abs(ball.userData.velocity.z);}
-				if(ball.position.z > 5) {ball.position.z = 5; ball.userData.velocity.z = -Math.abs(ball.userData.velocity.z);}
+				if(ball.position.x - ball.userData.radius <=-5) {ball.position.x = -5 + ball.userData.radius ; ball.userData.velocity.x = Math.abs(ball.userData.velocity.x);}
+				if(ball.position.x + ball.userData.radius > 5) {ball.position.x = 5 - ball.userData.radius ; ball.userData.velocity.x = -Math.abs(ball.userData.velocity.x);}
+				if(ball.position.y - ball.userData.radius <=-5) {ball.position.y = -5 + ball.userData.radius ; ball.userData.velocity.y = Math.abs(ball.userData.velocity.y);}
+				if(ball.position.y + ball.userData.radius > 5) {ball.position.y = 5- ball.userData.radius ; ball.userData.velocity.y = -Math.abs(ball.userData.velocity.y);}
+				if(ball.position.z - ball.userData.radius <=-5) {ball.position.z = -5 + ball.userData.radius ; ball.userData.velocity.z = Math.abs(ball.userData.velocity.z);}
+				if(ball.position.z + ball.userData.radius > 5) {ball.position.z = 5 - ball.userData.radius ; ball.userData.velocity.z = -Math.abs(ball.userData.velocity.z);}
 				
 			}
 
